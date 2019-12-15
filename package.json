@@ -1,0 +1,24 @@
+{
+  "private": true,
+  "scripts": {
+    "start": "micro"
+  },
+  "dependencies": {
+    "axios": "^0.19.0",
+    "micro": "^9.1.0"
+  },
+  "name": "alisagame",
+  "description": "Примеры использования Яндекс.Диалогов для создания навыков Алисы, голосового помощника, придуманного в компании Яндекс.",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yandex/alice-skills.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yandex/alice-skills/issues"
+  },
+  "homepage": "https://github.com/yandex/alice-skills#readme"
+}
