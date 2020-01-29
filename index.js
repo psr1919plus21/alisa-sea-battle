@@ -3,7 +3,7 @@ const { json } = require('micro');
 const axios = require('axios');
 
 // Запуск асинхронного сервиса.
-module.exports = async (req, res) => {
+const x = (req, res) => {
     const { request, session, version } = await json(req);
     const requestText = request.original_utterance;
     
