@@ -68,7 +68,7 @@ class SeaBattle {
                 // Пустая клетка
                 if (!cell.isPristine) {
                     text = 'Уже была атакована';
-                } else if (cell.shipId) {
+                } else if (!cell.shipId) {
                     cell.isPristine = false;
                     this.isPlayerStep = false;
 
