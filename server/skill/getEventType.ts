@@ -12,6 +12,7 @@ const map: { [key: string]: EventType } = {
 
     'начать': 'start',
     'старт': 'start',
+    'да': 'start',
     'поехали': 'start',
     'дадавайсыграем': 'start',
 
