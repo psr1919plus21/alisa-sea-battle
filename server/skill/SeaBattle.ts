@@ -78,7 +78,7 @@ class SeaBattle {
                     this.isPlayerStep = false;
 
                     const alisaTarget = this.alisaField.getRandAttack();
-                    text = `Мимо, моя очередь, стреляю в ${alisaTarget}`;
+                    text = `Мимо, моя очередь, стреляю в ${alisaTarget}, я попала?`;
                     this.lastAttackCell = alisaTarget;
                 } else {
                     // клетка с кораблем
@@ -87,7 +87,7 @@ class SeaBattle {
                     console.log('attackResult: ', attackResult);
 
                     if (attackResult === 'hit') {
-                        text = speechGen('hit');
+                        text = 'Подбита палуба корабля, стреляйте еще раз'
 
                     } else if (attackResult === 'sank') {
 
@@ -100,7 +100,7 @@ class SeaBattle {
             }
 
             case "hit":
-                text = 'Ура, мне сегодня везет';
+                text = speechGen('hit');
 
                 this.isPlayerStep = true;
 
