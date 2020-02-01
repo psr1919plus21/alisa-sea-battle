@@ -19,6 +19,12 @@ app.get('/', (req, res) => {
     res.send('Hello World!')
 });
 
+app.post('/hook', (req, res) => {
+    console.log('app.post("/hook")');
+    res.send('hook')
+});
+
+
 app.post('/', async (req, res) => {
     console.log(req.body);
 
