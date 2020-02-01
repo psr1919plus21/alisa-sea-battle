@@ -34,7 +34,7 @@ export default class Field {
     };
 
     public getRandAttack = () => {
-        const pristineCells = Object.keys(this.map).filter(cellId => !this.map[cellId].isPristine);
+        const pristineCells = Object.keys(this.map).filter(cellId => this.map[cellId].isPristine);
 
         return pristineCells[Math.floor(Math.random() * pristineCells.length)];
     }
