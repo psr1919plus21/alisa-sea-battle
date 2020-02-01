@@ -1,7 +1,7 @@
 var path = require('path');
 
 module.exports = {
-    entry: './server/server.js',
+    entry: './server/server.ts',
     target: "node",
     devtool: false,
     output: {
