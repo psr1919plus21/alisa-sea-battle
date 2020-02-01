@@ -1,5 +1,5 @@
 import getEventType from "./getEventType";
-import normalizeCell from "./normalizeCell";
+import normalizeText from "./normalizeCell";
 import ShipsRegistry from "../../components/ShipsRegistry";
 import Field from "../../components/field/Field";
 import speechGen from "../../components/speechGenerator/SpeechGenerator";
@@ -30,10 +30,9 @@ class SeaBattle {
     }
 
     public getResponseFor = (req: ISkillRequest): ISkillResponse => {
-        const cellId = normalizeCell(req.command) as keyof Field;
+        const cellId = normalizeText(req.command) as keyof Field;
         const type = getEventType(req.text, cellId);
-        console.log('type', type);
-        console.log('cell', cellId);
+
         let text = 'дефолтный текст';
 
         if (!this.isPlayerStep && ['hit', 'past'].indexOf(type) === -1) {
@@ -123,6 +122,10 @@ class SeaBattle {
                 break;
             case "notFoundQuestion":
                 text = 'Не дерзи, ато захвачу мир';
+
+                break;
+            default:
+                text = 'Что-то пошло не так';
 
                 break;
         }

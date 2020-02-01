@@ -8,12 +8,17 @@ const map: {[k in EventType]?: string[]} = {
     past: ['Мимо! Моя очередь!','Хороший залп, но мимо','И это все на что вы способны? Теперь я!', 'Немного не туда. Повезет в следующий раз!','очень жаль, по данным моей разведки там должен быть корабль'],
     notFound: ['что-то пошло не так', 'я вас не понимаю','я твоя моя не понимать'],
     sank: ['Мой Титаник утонул. Как жаль, что не играет песня оттуда','Я намочила ноги. Хотя погодите, у меня их нет'],
-    hit: ['Ура мне сегодня везет!', 'Попала! Я на кураже!', 'Моя прелесть! Я смогла!'],
+    hit: ['Подбит', 'Кораблик подбит'],
 }
 
 export default function speechGen(type: EventType) {
     const arr = map[type];
-        let randomGen = Math.round(Math.random() * arr.length);
+    let randomGen = Math.round(Math.random() * arr.length);
+
+    if (map[type][randomGen]) {
         return map[type][randomGen];
+    }
+
+    return map[type][0];
 }
 
