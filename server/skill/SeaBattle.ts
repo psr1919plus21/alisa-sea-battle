@@ -93,7 +93,8 @@ class SeaBattle {
                         text = speechGen('sank')
 
                     } else if (attackResult === 'loose') {
-                        text = 'Все мои корабли утонули, поздравляю с победой! Можем сыграть еще разок';
+                        text = 'Убит';
+                        this.alisaShips.numberShipsAlive--;
                     } else {
                         text = 'Вы уже стреляли в эту ячейку, выберите другую';
                     }
