@@ -40,12 +40,6 @@ export default class ShipsRegistry {
     }
 
     public attack(id: number, coords: string) {
-        const makeResponse = (response) => ({
-            ship: id,
-            coords: coords,
-            response
-        });
-
         if (this.ships[id].decks[coords].isAlive) {
             this.ships[id].decks[coords].isAlive = false;
             this.ships[id].numberDecksAlive -= 1;
@@ -54,15 +48,15 @@ export default class ShipsRegistry {
                 this.ships.numberShipsAlive -= 1;
 
                 if (this.ships.numberShipsAlive === 0) {
-                    return makeResponse('loose');
+                    return 'loose';
                 }
 
-                return makeResponse('sank');
+                return 'sank';
             }
 
-            return makeResponse('hit');
+            return 'hit';
         }
 
-        return makeResponse(this.ships[id].numberDecksAlive > 0 ? 'hitted' : 'sanked');
+        return this.ships[id].numberDecksAlive > 0 ? 'hitted' : 'sanked';
     }
 }
