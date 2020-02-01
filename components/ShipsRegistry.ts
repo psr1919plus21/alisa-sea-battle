@@ -143,6 +143,10 @@ export default class ShipsRegistry {
         }
     }
 
+    public getShipsCount() {
+        return this.numberShipsAlive;
+    }
+
     public attack(shipId: string, cellId: string): 'loose' | 'sank' | 'hit' | 'hitted' | 'sanked' {
         if (this.ships[shipId].decks[cellId].isAlive) {
             this.ships[shipId].decks[cellId].isAlive = false;
@@ -150,6 +154,7 @@ export default class ShipsRegistry {
 
             if (this.ships[shipId].numberDecksAlive === 0) {
                 this.numberShipsAlive -= 1;
+                console.log('this.numberShipsAlive: ', this.numberShipsAlive);
 
                 if (this.numberShipsAlive === 0) {
                     return 'loose';
