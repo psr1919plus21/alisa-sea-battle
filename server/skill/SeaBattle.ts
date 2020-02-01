@@ -1,5 +1,5 @@
 import getEventType from "./getEventType";
-import prepareRawCell from "./prepareRawCell";
+import normalizeCell from "./normalizeCell";
 
 interface ISkillRequest {
     text: string;
@@ -17,7 +17,7 @@ class SeaBattle {
     public destroyedBotShips: number;
 
     public getResponseFor = (req: ISkillRequest): ISkillResponse => {
-        const cell = prepareRawCell(req.command.split(' ').join('').toLowerCase());
+        const cell = normalizeCell(req.command);
         const type = getEventType(req.text, cell);
         console.log('type', type);
         console.log('cell', cell);
