@@ -37,7 +37,7 @@ app.post('/', async (req, res) => {
     const requestText = request.original_utterance;
 
     if (requestText === '' || requestText === 'что ты умеешь') {
-        message = 'Я могу сыграть с вами в морской бой, хотите узнать правила или начать игру?';
+        message = 'WORKS!!! Я могу сыграть с вами в морской бой, хотите узнать правила или начать игру?';
     } else {
         const question = await axios.get('https://engine.lifeis.porn/api/millionaire.php?q=2');
         message = question.data.data.question;
