@@ -21,7 +21,7 @@ app.get('/', (req, res) => {
 
 app.post('/hook', (req, res) => {
     console.log('app.post("/hook")');
-    res.send('hook')
+    res.send('hook test')
 });
 
 
