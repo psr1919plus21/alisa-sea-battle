@@ -90,8 +90,9 @@ class SeaBattle {
                         text = 'Подбита палуба корабля, стреляйте еще раз'
 
                     } else if (attackResult === 'sank') {
-
                         text = speechGen('sank')
+                    } else if (attackResult === 'loose') {
+                        text = 'Убит';
                     } else {
                         text = 'Вы уже стреляли в эту ячейку, выберите другую';
                     }
