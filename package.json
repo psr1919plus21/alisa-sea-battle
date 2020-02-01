@@ -1,12 +1,18 @@
 {
   "private": true,
   "scripts": {
+    "watch": "webpack --watch",
+    "serve": "node ./build/bundle.js",
+    "build": "webpack",
     "start": "micro"
   },
   "dependencies": {
     "axios": "^0.19.0",
     "express": "^4.17.1",
     "micro": "^9.1.0"
+  },
+  "devDependencies": {
+    "shelljs": "^0.8.3"
   },
   "name": "alisagame",
   "description": "Примеры использования Яндекс.Диалогов для создания навыков Алисы, голосового помощника, придуманного в компании Яндекс.",
@@ -21,8 +27,5 @@
   "bugs": {
     "url": "https://github.com/yandex/alice-skills/issues"
   },
-  "homepage": "https://github.com/yandex/alice-skills#readme",
-  "devDependencies": {
-    "shelljs": "^0.8.3"
-  }
+  "homepage": "https://github.com/yandex/alice-skills#readme"
 }
