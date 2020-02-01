@@ -32,4 +32,10 @@ export default class Field {
     public setPristined = (key: string) => {
         this.map[key].isPristine = true;
     };
+
+    public getRandAttack = () => {
+        const pristineCells = Object.keys(this.map).filter(cellId => !this.map[cellId].isPristine);
+
+        return pristineCells[Math.floor(Math.random() * pristineCells.length)];
+    }
 }
