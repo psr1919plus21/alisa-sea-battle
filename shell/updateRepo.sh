@@ -2,4 +2,4 @@
 git reset --hard HEAD
 git pull --rebase origin master -X theirs
 npm run build
-pm2 restart build/bundle.js
+pm2 restart bundle
