@@ -1,4 +1,4 @@
-type EventType = 'welcome' |'info' | 'start' | 'shoot';
+type EventType = 'welcome' |'info' | 'start' | 'shoot' | 'notFound';
 
 const map: { [key: string]: EventType } = {
     'узнать': 'info',
@@ -7,7 +7,11 @@ const map: { [key: string]: EventType } = {
 };
 
 function getEventType(text: string): EventType {
-    return map[text] || 'info';
+    if (/[a-z][0-9]/.test(text)) {
+        return 'shoot';
+    } else {
+        return map[text] || 'notFound';
+    }
 }
 
 export default getEventType;

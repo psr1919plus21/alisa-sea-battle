@@ -39,4 +39,4 @@ const options = {
 
 https
     .createServer(options, app)
-    .listen(3000, () => console.log(`Example app listening on port ${port}!\nhttp://localhost:${port}`));
+    .listen(3000, () => console.log(`Example app listening on port ${port}!\nhttps://localhost:${port}`));

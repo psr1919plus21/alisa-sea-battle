@@ -11,7 +11,10 @@ const handleRequest: RequestHandler = async (req: Request, res: Response) => {
     const requestText = request.original_utterance;
     console.log(requestText);
 
-    const params = prepareRequest({text: requestText});
+    const params = prepareRequest({
+        text: requestText,
+        command: request.command,
+    });
 
     let seaBattle = cache.get(session);
 
@@ -28,8 +31,8 @@ const handleRequest: RequestHandler = async (req: Request, res: Response) => {
         message: skillResponse.text,
     });
 
-   res
-       .json(response);
+    res
+        .json(response);
 };
 
 export default handleRequest;

@@ -1,7 +1,9 @@
 import getEventType from "./getEventType";
+import prepareRawCell from "./prepareRawCell";
 
 interface ISkillRequest {
     text: string;
+    command: string;
 }
 
 interface ISkillResponse {
@@ -35,12 +37,17 @@ class SeaBattle {
                 break;
             }
             case 'shoot': {
-                const cell = 'a1'; // как-то определяем ячейку
+                const cell = prepareRawCell(req.command.split(' ').join('').toLowerCase());
 
-                text = 'Мимо';
+                text = 'Мимо ' + cell;
+                console.log(text);
 
                 break;
             }
+            case "notFound":
+                text = 'Я вас не понимаю';
+
+                break;
         }
 
         return {
