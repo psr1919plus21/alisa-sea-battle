@@ -138,7 +138,7 @@ export default class ShipsRegistry {
 
         for (let shipId in this.ships) {
             for (let coords in this.ships[shipId].decks) {
-                field.map[coords].shipId = shipId;
+                field.map[coords] && (field.map[coords].shipId = shipId);
             }
         }
     }
