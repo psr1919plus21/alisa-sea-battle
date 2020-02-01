@@ -78,7 +78,7 @@ class SeaBattle {
                     this.isPlayerStep = false;
 
                     const alisaTarget = this.alisaField.getRandAttack();
-                    text = `Мимо, моя очередь, стреляю в ${alisaTarget}, я попала?`;
+                    text = `Мимо, моя очередь, стреляю в ${alisaTarget}, скажите попала ли я?`;
                     this.lastAttackCell = alisaTarget;
                 } else {
                     // клетка с кораблем
@@ -92,6 +92,7 @@ class SeaBattle {
                     } else if (attackResult === 'sank') {
 
                         text = speechGen('sank')
+                        this.alisaShips.numberShipsAlive--;
                     } else {
                         text = 'Вы уже стреляли в эту ячейку, выберите другую';
                     }
