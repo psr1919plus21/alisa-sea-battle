@@ -22,10 +22,10 @@ const map: { [key: string]: EventType } = {
 
     'статистика': 'stats',
 
-    'Код ходит': 'step',
-    'Чей ход': 'step',
+    'ктоходит': 'step',
+    'чейход': 'step',
 
-    'Ты меня понимаешь': 'notFoundQuestion',
+    'тыменяпонимаешь': 'notFoundQuestion',
 };
 
 function getEventType(text: string, cell: string): EventType {
