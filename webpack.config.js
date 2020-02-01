@@ -3,7 +3,7 @@ var path = require('path');
 module.exports = {
     entry: './server/server.js',
     target: "node",
-    devtool: 'inline-source-map',
+    devtool: false,
     output: {
         path: path.resolve(__dirname, 'build'),
         filename: 'bundle.js'
