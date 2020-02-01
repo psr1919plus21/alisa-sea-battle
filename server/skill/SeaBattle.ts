@@ -90,9 +90,12 @@ class SeaBattle {
                         text = 'Подбита палуба корабля, стреляйте еще раз'
 
                     } else if (attackResult === 'sank') {
-
                         text = speechGen('sank')
+
                         this.alisaShips.numberShipsAlive--;
+
+                    } else if (attackResult === 'loose') {
+                        text = 'Все мои корабли утонули, поздравляю с победой! Можем сыграть еще разок';
                     } else {
                         text = 'Вы уже стреляли в эту ячейку, выберите другую';
                     }
