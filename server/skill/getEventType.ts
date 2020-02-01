@@ -2,7 +2,7 @@ type EventType = 'welcome' | 'info' | 'start' | 'shoot' | 'notFound' | 'hit' | '
 
 const map: { [key: string]: EventType } = {
     'узнать': 'info',
-    'привет': 'welcome',
+    '': 'welcome',
     'начать': 'start',
     'подбит': 'hit',
     'ранен': 'hit',
