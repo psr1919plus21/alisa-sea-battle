@@ -32,7 +32,7 @@ function getEventType(text: string, cell: string): EventType {
     if (/[a-j][0-9]/.test(cell)) {
         return 'shoot';
     } else {
-        return map[text.toLowerCase()] || 'notFound';
+        return map[text.toLowerCase().split(' ').join('')] || 'notFound';
     }
 }
 
