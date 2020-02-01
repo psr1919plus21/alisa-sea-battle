@@ -1,11 +1,16 @@
+interface ICell {
+    isPristine: boolean,
+    shipId: string | null,
+}
+
 interface FieldMap {
-    [key: string]: any
+    [key: string]: ICell,
 }
 
 const numbers = [1,2,3,4,5,6,7,8,9, 10];
 const characters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'];
 
-class Field {
+export default class Field {
     public map: FieldMap;
     
     constructor() {
@@ -13,7 +18,7 @@ class Field {
 
         for(const char of characters) {
             for(const number of numbers) {
-                generatedMap[char + number] = { isPristine: false, sheepId: null };
+                generatedMap[char + number] = { isPristine: false, shipId: null };
             }
         }
 

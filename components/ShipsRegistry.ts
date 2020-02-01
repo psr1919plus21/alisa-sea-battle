@@ -1,3 +1,5 @@
+import Field from './field/Field';
+
 interface IDeck {
     isAlive: boolean,
 }
@@ -129,14 +131,14 @@ export default class ShipsRegistry {
     public ships: {
         [key: number]: IShip,
     };
-    constructor(map) {
+    constructor(field: Field) {
         let shipIndex = 0;
         this.numberShipsAlive = 10;
         this.ships = { ...placedShips };
 
         for (let shipId in this.ships) {
             for (let coords in this.ships[shipId].decks) {
-                map[coords].shipId = shipId;
+                field.map[coords].shipId = shipId;
             }
         }
     }
@@ -147,9 +149,9 @@ export default class ShipsRegistry {
             this.ships[id].numberDecksAlive -= 1;
 
             if (this.ships[id].numberDecksAlive === 0) {
-                this.ships.numberShipsAlive -= 1;
+                this.numberShipsAlive -= 1;
 
-                if (this.ships.numberShipsAlive === 0) {
+                if (this.numberShipsAlive === 0) {
                     return 'loose';
                 }
 
