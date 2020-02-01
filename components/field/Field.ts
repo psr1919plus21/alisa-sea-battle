@@ -18,7 +18,7 @@ export default class Field {
 
         for(const char of characters) {
             for(const number of numbers) {
-                generatedMap[char + number] = { isPristine: false, shipId: null };
+                generatedMap[char + number] = { isPristine: true, shipId: null };
             }
         }
 
