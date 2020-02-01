@@ -34,7 +34,7 @@ class SeaBattle {
         const type = getEventType(req.text, cellId);
         console.log('type', type);
         console.log('cell', cellId);
-        let text = '';
+        let text = 'дефолтный текст';
 
         if (!this.isPlayerStep && ['hit', 'past'].indexOf(type) === -1) {
 
@@ -51,6 +51,10 @@ class SeaBattle {
 
                 break;
             }
+            case "stats":
+                text = 'У меня ещё ' + this.alisaShips.numberShipsAlive + ' кораблей, жалкий человек';
+
+                break;
             case 'info': {
                 text = speechGen(type);
 
@@ -73,19 +77,23 @@ class SeaBattle {
                     cell.isPristine = false;
                     this.isPlayerStep = false;
 
-                    const alisaTarget = 'a2';
+                    const alisaTarget = this.alisaField.getRandAttack();
                     text = `Мимо, моя очередь, стреляю в ${alisaTarget}`;
-
-
+                    this.lastAttackCell = alisaTarget;
                 } else {
                     // клетка с кораблем
                     const attackResult = this.alisaShips.attack(cell.shipId, cellId);
+
+                    console.log('attackResult: ', attackResult);
 
                     if (attackResult === 'hit') {
                         text = speechGen('hit');
 
                     } else if (attackResult === 'sank') {
+
                         text = speechGen('sank')
+                    } else {
+                        text = 'Вы уже стреляли в эту ячейку, выберите другую';
                     }
                 }
                 break;
@@ -104,6 +112,14 @@ class SeaBattle {
                 break;
             case "notFound":
                 text = 'Я вас не понимаю';
+
+                break;
+            case "step":
+                text = this.isPlayerStep ? 'Ваш ход' : 'Скажите что с ячейкой ' + this.lastAttackCell;
+
+                break;
+            case "notFoundQuestion":
+                text = 'Не дерзи, ато захвачу мир';
 
                 break;
         }

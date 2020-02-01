@@ -1,20 +1,4 @@
-import {EventType} from "../../server/skill/getEventType";
-// interface dbType {
-//     [key: string]: any
-// }
-// const infoDB = ['Это морской бой с Алисой', 'Морской бой.Алиса', 'Древнейшая стратегия с корабликами']
-// const welcomeDB = ['Это морской бой с Алисой', 'Морской бой.Алиса', 'Древнейшая стратегия с корабликами']
-
-// class speechGen {
-//     public gen: dbType;
-//     constructor() {
-//         function beta() {
-//             let randomInfo = Math.round(Math.random() * 2);
-//             return { info: infoDB[randomInfo] }
-//         }
-//         console.log(beta())
-//     }
-// }
+import { EventType }  from "../../server/skill/getEventType";
 
 
 const map: {[k in EventType]?: string[]} = {
