@@ -10,7 +10,8 @@
     "axios": "^0.19.0",
     "express": "^4.17.1",
     "lru-cache": "^5.1.1",
-    "micro": "^9.1.0"
+    "micro": "^9.1.0",
+    "ts-node": "^8.6.2"
   },
   "devDependencies": {
     "@types/express": "^4.17.2",
