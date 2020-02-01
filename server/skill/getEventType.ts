@@ -6,8 +6,8 @@ const map: { [key: string]: EventType } = {
     'начать': 'start',
 };
 
-function getEventType(text: string): EventType {
-    if (/[a-z][0-9]/.test(text)) {
+function getEventType(text: string, cell: string): EventType {
+    if (/[a-j][0-9]/.test(cell)) {
         return 'shoot';
     } else {
         return map[text] || 'notFound';

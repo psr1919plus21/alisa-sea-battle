@@ -17,7 +17,10 @@ class SeaBattle {
     public destroyedBotShips: number;
 
     public getResponseFor = (req: ISkillRequest): ISkillResponse => {
-        const type = getEventType(req.text);
+        const cell = prepareRawCell(req.command.split(' ').join('').toLowerCase());
+        const type = getEventType(req.text, cell);
+        console.log('type', type);
+        console.log('cell', cell);
         let text = '';
 
         switch (type) {
@@ -37,8 +40,6 @@ class SeaBattle {
                 break;
             }
             case 'shoot': {
-                const cell = prepareRawCell(req.command.split(' ').join('').toLowerCase());
-
                 text = 'Мимо ' + cell;
                 console.log(text);
 
