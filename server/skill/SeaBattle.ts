@@ -51,7 +51,7 @@ class SeaBattle {
                 break;
             }
             case "stats":
-                text = 'У меня ещё ' + this.alisaShips.numberShipsAlive + ' ха-ха';
+                text = 'У меня ещё ' + this.alisaShips.numberShipsAlive + ' кораблей, жалкий человек';
 
                 break;
             case 'info': {
