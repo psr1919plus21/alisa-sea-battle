@@ -33,7 +33,7 @@ class SeaBattle {
         const type = getEventType(req.text, cellId);
         console.log('type', type);
         console.log('cell', cellId);
-        let text = '';
+        let text = 'дефолтный текст';
 
         if (!this.isPlayerStep && ['hit', 'past'].indexOf(type) === -1) {
 
@@ -79,6 +79,8 @@ class SeaBattle {
                 } else {
                     // клетка с кораблем
                     const attackResult = this.alisaShips.attack(cell.shipId, cellId);
+
+                    console.log('attackResult: ', attackResult);
 
                     if (attackResult === 'hit') {
                         text = 'Подбита палуба корабля'
