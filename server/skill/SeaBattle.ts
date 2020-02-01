@@ -52,7 +52,7 @@ class SeaBattle {
                 break;
             }
             case "stats":
-                text = 'У меня ещё ' + this.alisaShips.numberShipsAlive + ' кораблей, жалкий человек';
+                text = 'У меня ещё ' + this.alisaShips.getShipsCount() + ' кораблей, жалкий человек';
 
                 break;
             case 'info': {
@@ -91,8 +91,6 @@ class SeaBattle {
 
                     } else if (attackResult === 'sank') {
                         text = speechGen('sank')
-
-                        this.alisaShips.numberShipsAlive--;
 
                     } else if (attackResult === 'loose') {
                         text = 'Все мои корабли утонули, поздравляю с победой! Можем сыграть еще разок';
