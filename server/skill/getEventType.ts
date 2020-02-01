@@ -1,4 +1,4 @@
-type EventType = 'welcome' | 'info' | 'start' | 'shoot' | 'notFound' | 'hit' | 'past' ;
+export type EventType = 'welcome' | 'info' | 'start' | 'shoot' | 'notFound' | 'hit' | 'past' ;
 
 const map: { [key: string]: EventType } = {
     'узнать': 'info',
