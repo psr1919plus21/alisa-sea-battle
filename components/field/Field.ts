@@ -8,7 +8,7 @@ interface FieldMap {
 }
 
 const numbers = [1,2,3,4,5,6,7,8,9, 10];
-const characters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'];
+const characters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'];
 
 export default class Field {
     public map: FieldMap;
