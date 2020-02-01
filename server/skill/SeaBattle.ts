@@ -2,6 +2,7 @@ import getEventType from "./getEventType";
 import normalizeCell from "./normalizeCell";
 import ShipsRegistry from "../../components/ShipsRegistry";
 import Field from "../../components/field/Field";
+import speechGen from "../../components/speechGenerator/SpeechGenerator";
 
 interface ISkillRequest {
     text: string;
@@ -46,7 +47,7 @@ class SeaBattle {
 
         switch (type) {
             case 'welcome': {
-                text = 'Привет, хотите поиграть в морской бой?';
+                text = speechGen(type);
 
                 break;
             }
@@ -55,12 +56,12 @@ class SeaBattle {
 
                 break;
             case 'info': {
-                text = 'Это морской бой с Алисой';
+                text = speechGen(type);
 
                 break;
             }
             case 'start': {
-                text = 'Я расставила корабли, стреляйте';
+                text = speechGen(type);
 
                 break;
             }
@@ -86,10 +87,11 @@ class SeaBattle {
                     console.log('attackResult: ', attackResult);
 
                     if (attackResult === 'hit') {
-                        text = 'Подбита палуба корабля'
+                        text = speechGen('hit');
 
                     } else if (attackResult === 'sank') {
-                        text = 'Поздравляю, шарик, ты потопил мой корабль'
+
+                        text = speechGen('sank')
                     } else {
                         text = 'Вы уже стреляли в эту ячейку, выберите другую';
                     }

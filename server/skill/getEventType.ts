@@ -1,4 +1,5 @@
-type EventType = 'welcome' | 'info' | 'start' | 'shoot' | 'notFound' | 'hit' | 'past' | 'stats' | 'step' | 'notFoundQuestion';
+
+export type EventType = 'welcome' | 'info' | 'start' | 'sank' | 'shoot' | 'notFound' | 'hit' | 'past' | 'stats' | 'step' | 'notFoundQuestion';
 
 const map: { [key: string]: EventType } = {
     'узнать': 'info',
@@ -12,6 +13,7 @@ const map: { [key: string]: EventType } = {
     'начать': 'start',
     'старт': 'start',
     'поехали': 'start',
+    'дадавайсыграем': 'start',
 
     'подбит': 'hit',
     'попала': 'hit',
