@@ -129,7 +129,7 @@ const MAX_SHIP_LENGTH = 4;
 export default class ShipsRegistry {
     public numberShipsAlive: number;
     public ships: {
-        [key: number]: IShip,
+        [key: string]: IShip,
     };
     constructor(field: Field) {
         let shipIndex = 0;
@@ -143,12 +143,12 @@ export default class ShipsRegistry {
         }
     }
 
-    public attack(id: number, coords: string) {
-        if (this.ships[id].decks[coords].isAlive) {
-            this.ships[id].decks[coords].isAlive = false;
-            this.ships[id].numberDecksAlive -= 1;
+    public attack(shipId: string, cellId: string): 'loose' | 'sank' | 'hit' | 'hitted' | 'sanked' {
+        if (this.ships[shipId].decks[cellId].isAlive) {
+            this.ships[shipId].decks[cellId].isAlive = false;
+            this.ships[shipId].numberDecksAlive -= 1;
 
-            if (this.ships[id].numberDecksAlive === 0) {
+            if (this.ships[shipId].numberDecksAlive === 0) {
                 this.numberShipsAlive -= 1;
 
                 if (this.numberShipsAlive === 0) {
@@ -161,6 +161,6 @@ export default class ShipsRegistry {
             return 'hit';
         }
 
-        return this.ships[id].numberDecksAlive > 0 ? 'hitted' : 'sanked';
+        return this.ships[shipId].numberDecksAlive > 0 ? 'hitted' : 'sanked';
     }
 }

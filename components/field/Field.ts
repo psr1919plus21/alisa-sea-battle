@@ -12,7 +12,7 @@ const characters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'];
 
 export default class Field {
     public map: FieldMap;
-    
+
     constructor() {
         const generatedMap: FieldMap = {};
 
@@ -25,7 +25,11 @@ export default class Field {
         this.map = generatedMap;
     }
 
-    public isPristine =(key: string) => {
-       return this.map[key].isPristine;
-    }
+    public isPristine = (key: string) => {
+        return this.map[key].isPristine;
+    };
+
+    public setPristined = (key: string) => {
+        this.map[key].isPristine = true;
+    };
 }
