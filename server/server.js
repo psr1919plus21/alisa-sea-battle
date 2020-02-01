@@ -21,6 +21,7 @@ app.get('/', (req, res) => {
 
 app.post('/hook', (req, res) => {
     console.log('app.post("/hook")');
+    console.log('req: ', req);
     res.send('hook test')
 });
 
