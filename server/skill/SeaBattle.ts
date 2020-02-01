@@ -51,7 +51,7 @@ class SeaBattle {
                 break;
             }
             case "stats":
-                text = 'Осталось кораблей: ' + this.alisaShips.numberShipsAlive;
+                text = 'У меня ещё ' + this.alisaShips.numberShipsAlive + ' ха-ха';
 
                 break;
             case 'info': {
@@ -90,6 +90,8 @@ class SeaBattle {
 
                     } else if (attackResult === 'sank') {
                         text = 'Поздравляю, шарик, ты потопил мой корабль'
+                    } else {
+                        text = 'Вы уже стреляли в эту ячейку, выберите другую';
                     }
                 }
                 break;
