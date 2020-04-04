@@ -1,9 +1,7 @@
 const exec = require('child_process').exec;
 
 function updateRepo() {
-
-    console.log('\n\n\n', 'sh ' + __dirname + '/shell/updateRepo.sh', '\n\n\n');;
-    exec('sh ' + __dirname + '/updateRepo.sh',
+    exec('sh .' + __dirname + 'shell/updateRepo.sh',
     (error, stdout, stderr) => {
         console.log(stdout);
         console.log(stderr);
