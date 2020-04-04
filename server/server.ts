@@ -18,7 +18,7 @@ const port = 3000;
 
 app.get('/', (req, res) => {
     console.log('app.get("/")');
-    res.send('Hello World! (Hook test)')
+    res.send('Hello World! (Hook test 2)')
 });
 
 app.post('/hook', (req, res) => {
